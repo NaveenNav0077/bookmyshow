@@ -1,0 +1,165 @@
+.Selected{
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+    background-color: #FAFAFA;
+}
+
+.selected_header{
+    height: 10vh;
+    width: 100%;
+    background-color: #333545;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px;
+}
+
+.slected_details{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.selected_show_name{
+    padding: 2.5px 0px 2.5px 0px;
+    font-size: large;
+    font-weight: 500;
+}
+.selected_show_details{
+    padding: 2.5px 0px 2.5px 0px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.selected_tickets{
+    margin-right: 50px;
+    padding: 8px 15px;
+    color: white;
+    font-size: medium;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.selected_timings{
+    height: 8vh;
+    width: 100%;
+    background-color: #F5F5FA;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.selected_show_timing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    color: white;
+    background-color: #71BD80;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.un_selected_show_timing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    color: #71BD80;
+    border: 1px solid #71BD80;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+
+.select_seats{
+    min-height: 600px;
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seats_container{
+    min-height: 450px;
+    height: 100%;
+    width: 50vw;
+}
+
+.seat_row{
+    padding: 5px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.seat_row_space{
+    height: 45px;
+}
+
+.seat_title{
+    height: 25px;
+    width: 25px;
+    color: #333545;
+}
+
+.seat{
+    height: 25px;
+    width: 25px;
+    color: #71BD80;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #71BD80;
+    border-radius: 2px;
+}
+
+.screan{
+    min-height: 30px;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+}
+
+.screan_demo{
+    margin: 15px 0px 5px 0px;
+    height: 7px;
+    width: 50%;
+    background-color: #d5d5de;
+}
+
+.selected_payment{
+    height: 8vh;
+    width: 100%;
+    background-color: #F5F5FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected_price_box{
+    display: flex;
+    min-width: 200px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 50px;
+    color: white;
+    background-color: #F84464;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+}

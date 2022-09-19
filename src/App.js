@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './layouts/header/header'
+import Shows from './layouts/shows/shows.js'
+import Theaters from './routes/theaters/theaters'
+import Selected from './routes/selected/selected'
+import { Route, Routes  } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Shows />} />
+        <Route path='/theaters' element={<Theaters />} />
+        <Route path='/selected' element={<Selected />} />
+      </Routes>
     </div>
   );
 }
