@@ -1,16 +1,19 @@
 import React from 'react'
 import './theaters.scss'
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux'
 
 export default function Theaters() {
+  const state = useSelector(state=>state)
   let navigate = useNavigate(); 
+
   return (
-    <div className='Theaters'>
+    <div className='theaters'>
         <div className='theater_show'>
-            <div className='theater_show_title' >Top Gun Mavric</div>
+            <div className='theater_show_title' >{state.selected.selectedShow.name}</div>
             <div className='theater_show_discripion' >
-                <div className='theater_show_rating' >IMDB 7.1</div>
-                <div className='theater_show_duriation' >1 hrs 56 mins</div>
+                <div className='theater_show_rating' >{state.selected.selectedShow.genre}</div>
+                <div className='theater_show_duriation' >{state.selected.selectedShow.duration}</div>
             </div>
         </div>
 

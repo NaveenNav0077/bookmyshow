@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.scss'
-import Button from '../../components/Button/button'
+import Authendication from '../../components/Authendication/Authendication'
 import SearchBar from '../../components/SearchBar/searchbar'
 import Location from '../../components/location/location'
 
@@ -15,7 +15,7 @@ function Header() {
         </div>
         <div className='header_search_right'>
             <Location />
-            <Button text={"Sign In"} />
+            <Authendication />
         </div>
       </div>
 
