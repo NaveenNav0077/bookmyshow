@@ -3,7 +3,7 @@ import Axios from 'axios'
 
 export const getMovies = createAsyncThunk('movies/get', async (payload, thunkApi)=>{
     try{
-        const response = await Axios.get('http://localhost:5000/movies')
+        const response = await Axios.get('https://show-time-server.herokuapp.com/movies')
         return response.data
     } catch (err){
         return thunkApi.rejectWithValue(err);
@@ -12,7 +12,7 @@ export const getMovies = createAsyncThunk('movies/get', async (payload, thunkApi
 
 export const searchMovies = createAsyncThunk('search/get', async (payload, thunkApi)=>{
     try{
-        const response = await Axios.get(`http://localhost:5000/movies?search=${payload}`)
+        const response = await Axios.get(`https://show-time-server.herokuapp.com/movies?search=${payload}`)
         return response.data
     } catch (err){
         return thunkApi.rejectWithValue(err);

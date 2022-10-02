@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { searchMovies } from '../../redux/movies/movieAction';
+import React, { useState } from 'react';
+import { searchMovies, getMovies } from '../../redux/movies/movieAction';
 import { useDispatch } from 'react-redux'
 import './searchbar.scss'
 
@@ -8,7 +8,11 @@ export default function SearchBar() {
   const [search,setSearch] = useState('');
   const onSearchChange = (str)=>{
       setSearch(str)
-      dispatch(searchMovies(str));
+      if(str === ''){
+        dispatch(getMovies())
+      } else {
+        dispatch(searchMovies(str));
+      }
   }
 
   return (
