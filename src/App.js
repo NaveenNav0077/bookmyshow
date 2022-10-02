@@ -20,7 +20,6 @@ function App() {
     if(state.movies.movies!==null){
       dispatch(setSelectedShowsList(state.movies.movies))
     }
-    console.log(state)
   },[dispatch, state])
   
   return (
