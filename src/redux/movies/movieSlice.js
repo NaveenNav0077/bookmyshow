@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getMovies, searchMovies } from './movieAction'
+import { getMovies, searchMovies, sortMovies } from './movieAction'
 
 const initialState = {
     movies: null,  
@@ -23,6 +23,15 @@ export const movieSlice = createSlice({
             } 
         })
         .addCase(searchMovies.rejected, (state, action)=>{
+            state.error = action.payload
+        })  
+        .addCase(sortMovies.fulfilled, (state, action)=>{
+            if(action.payload.result!==null){
+                console.log(action.payload)
+                state.movies = action.payload
+            } 
+        })
+        .addCase(sortMovies.rejected, (state, action)=>{
             state.error = action.payload
         })  
     }

@@ -8,6 +8,7 @@ export default function SearchBar() {
   const [search,setSearch] = useState('');
   const onSearchChange = (str)=>{
       setSearch(str)
+      str=str.toLowerCase()
       if(str === ''){
         dispatch(getMovies())
       } else {

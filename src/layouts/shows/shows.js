@@ -1,27 +1,67 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './shows.scss'
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { setSelectedShow } from "../../redux/selected/selectedSlice"
+import { sortMovies } from "../../redux/movies/movieAction"
 
 
 export default function Shows() {
   let navigate = useNavigate(); 
   const dispatch = useDispatch();
   const state = useSelector(state=>state)
+  const [ sort, setSort] = useState({
+    attribute:'name',
+    type:"asd"
+  })
+
+  useEffect(()=>{
+    dispatch(sortMovies(sort))
+  },[sort, dispatch])
+
+  
 
   const selectedShow = (show)=>{
       dispatch(setSelectedShow(show))
       navigate('/theaters')
   }
 
+  function onSortChange(key, value){
+    setSort(
+      (pre)=>({
+        ...pre,
+        [key]:value 
+      })
+    )
+  }
+
   return (
     <div className='shows'>
 
       <div className='shows_filter'>
-
+        
+        <div className='shows_filter_title'>Sorts</div>
+        <div className='shows_filter_container'>
+            <div className='shows_filter_box' >
+              <div className='shows_filter_box_title'>Sort By</div> 
+              <div className='shows_filter_box_options'>
+                <div onClick={()=>onSortChange("attribute", "name")} className={ `shows_filter_box_list ${ sort.attribute === "name" && `selected_list`}`} >Name</div>  
+                <div onClick={()=>onSortChange("attribute", "ratings")} className={ `shows_filter_box_list ${ sort.attribute === "ratings" && `selected_list`}`}>Ratings</div>        
+              </div>
+            </div>
+            <div className='shows_filter_box' >
+              <div className='shows_filter_box_title'>Type</div> 
+              <div className='shows_filter_box_options'>
+                <div onClick={()=>onSortChange("type", "asd")} className={ `shows_filter_box_list ${ (sort.attribute === "name" && sort.type === "asd") && `selected_list`}`}>A - Z</div>  
+                <div onClick={()=>onSortChange("type", "dsd")} className={ `shows_filter_box_list ${ (sort.attribute === "name" && sort.type === "dsd") && `selected_list`}`}>Z - A</div>
+                <div onClick={()=>onSortChange("type", "asd")} className={ `shows_filter_box_list ${ (sort.attribute === "ratings" && sort.type === "asd") && `selected_list`}`}>0 - 100</div> 
+                <div onClick={()=>onSortChange("type", "dsd")} className={ `shows_filter_box_list ${ (sort.attribute === "ratings" && sort.type === "dsd") && `selected_list`}`}>100 - 0</div>       
+              </div>
+            </div>
+        </div>
+        <div className='shows_filter_title'></div>
+        <div className='shows_filter_title'></div>
         <div className='shows_filter_title'>Filters</div>
-
         <div className='shows_filter_container'>
 
             <div className='shows_filter_box' >
